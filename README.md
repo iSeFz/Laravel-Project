@@ -1,25 +1,35 @@
-# Laravel Registration Website
-This is a collaboration to complete the project of the **Web-based Information Systems** course at FCAI CU.
+## Important Instructions to run the project
 
-## Instructions
-
-- Always `git pull` before you push any new edits  
-- Separate commits where each commit has a certain change  
-- Do NOT push all work in just one commit (unless the edit is small)  
-- Write a meaningful message in the commit message  
-
-## Run the Laravel Project
-
-1. Execute the following command to install the vendor folder that must be exist to run the project
+1. Make your local Laravel project using the following command line
 
 ```bash
-composer install
+laravel new registration_project
 ```
 
-2. If the Laravel project gives an error like `Unkown Database called laravel_project`, create the this database as following:
+2. Run the following SQL command at the PHPMyAdmin panal
 
 ```sql
-CREATE DATABASE laravel_project;
+drop table users;
+create table Users(
+    username varchar(40) primary key,
+    email text ,
+    fullname text ,
+    password text,
+    address text ,
+    phone text,
+    imageName varchar(40),
+    birthdate Date
+);
 ```
 
-> Don't uplaod the `vendor` folder into the Github, delete it before you push your changes
+3. Replace all folders from the Github repo into this local Laravel project
+
+4. Run the Laravel Project using the following comamnd line
+
+```bash
+php artisan serve
+```
+
+## Important Instructions to uplaod your updated files into Github repo
+
+> Only upload all folders except the vendor folder
