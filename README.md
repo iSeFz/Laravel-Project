@@ -1,35 +1,40 @@
-## Important Instructions to run the project
+# Laravel Registration Website
 
-1. Make your local Laravel project using the following command line
+This is a collaboration to complete the project of the **Web-based Information Systems** course at FCAI CU.
 
+## General Instructions
+
+- Always `git pull` before you push any new edits  
+- Separate commits where each commit has a certain change  
+- Do NOT push all work in just one commit (unless the edit is small)  
+- Write a meaningful message in the commit message  
+
+## Important instructions to run the project
+
+1. Make your local Laravel project using the following command  
 ```bash
 laravel new registration_project
-```
-
-2. Run the following SQL command at the PHPMyAdmin panal
-
+```  
+2. Run the following SQL command at the PHPMyAdmin panel to create the correct database table  
 ```sql
-drop table users;
-create table Users(
+DROP TABLE Users;
+CREATE TABLE Users (
     username varchar(40) primary key,
-    email text ,
-    fullname text ,
+    email text,
+    fullname text,
     password text,
-    address text ,
+    address text,
     phone text,
     imageName varchar(40),
     birthdate Date
 );
-```
-
-3. Replace all folders from the Github repo into this local Laravel project
-
-4. Run the Laravel Project using the following comamnd line
-
+```  
+3. Replace all folders from the Github repo into your local Laravel project  
+4. Run the Laravel project using the following comamnd  
 ```bash
 php artisan serve
 ```
 
-## Important Instructions to uplaod your updated files into Github repo
+## Important note when uploading your updated files
 
-> Only upload all folders except the vendor folder
+> Do NOT push the `vendor` folder to the Github, only upload the modified folders except the vendor
