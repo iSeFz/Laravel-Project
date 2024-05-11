@@ -11,6 +11,7 @@ const cpassword = document.getElementById("cpassword");
 const actors = document.getElementById("actors");
 const submitform = document.getElementById("submitform");
 const checkactors = document.getElementById("checkactors");
+var translations =@json(__('register'));
 
 var validfullname = false, validusername = false, validbirthdate = false, validphone = false,
     validaddress = false, validemail = false, validphoto = false, validpass = false, validconfpass = false;
