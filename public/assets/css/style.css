@@ -12,6 +12,7 @@
   text-decoration: none;
   /* text-transform: capitalize;  */
   /*transition: 1s linear;*/
+  
 }
 
 html {
@@ -25,8 +26,14 @@ footer, header {
   background-color: #eee;
   font-size: 1.8em;
   text-align: center;
-  padding: 20px;
+  padding: 25px;
   margin: 0;
+}
+
+#language {
+  position: fixed;
+  direction: ltr;
+  top: 17px;
 }
 
 .form-container {
