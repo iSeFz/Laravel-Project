@@ -1,7 +1,9 @@
 <?php
 
-test('User already exists', function () {
+uses(\Illuminate\Foundation\Testing\TestCase::class);
+
+test('User does not exist', function () {
     $userController = new \App\Http\Controllers\UserController();
-    $response = $userController->checkUserExists('seifalgohary');
-    expect($response)->toBeTrue();
+    $response = $userController->checkUserExists('shawkyebrahimdddd');
+    expect($response)->toBe(false);
 });

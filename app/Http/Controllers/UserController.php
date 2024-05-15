@@ -30,9 +30,7 @@ class UserController extends Controller
     public function validateUsername(Request $request)
     {
         $username = $request->get('name');
-        Log::info('Request object: ', ['request' => $request->all()]); // Log the $request object        
-        // $user = Users::where('username', $username)->first();
-        // Log::info('User object: ', ['user' => $user]); // Log the $user object
+        Log::info('Request object: ', ['request' => $request->all()]);
         
         if ($this->checkUserExists($username)) {
             return response()->json(['valid' => false]);
@@ -60,16 +58,30 @@ class UserController extends Controller
             $image = $_FILES["photo"]["tmp_name"];
             $data = file_get_contents($image);
             $name = $_FILES["photo"]["name"];
-            while (file_exists(public_path('assets/photos/') . $name)) {
-                $imageName = $this->getNameFromImageName($name);
-                $extension = $this->getExtensionFromImageName($name);
-                $imageName++;
-                $name = $imageName . $extension;
+            while ($this->checkImageExists($name)) {
+                $name = $this->incrementImageNameIfExists($name);
             }
             $temp = $imagesFolderName . $name;
             file_put_contents($temp, $data);
             return $name;
         }
+    }
+
+    public function checkImageExists($name)
+    {
+        $imagesFolderName = public_path('assets/photos/');
+        if (file_exists($imagesFolderName . $name)) {
+            return true;
+        }
+        return false;
+    }
+
+    public function incrementImageNameIfExists($name)
+    {
+        $imageName = $this->getNameFromImageName($name);
+        $extension = $this->getExtensionFromImageName($name);
+        $imageName++;
+        return $imageName . $extension;
     }
 
     public function getNameFromImageName($name)
