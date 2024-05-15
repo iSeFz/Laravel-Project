@@ -14,7 +14,7 @@ class UserController extends Controller
         $user->username = $req->username;
         $user->email = $req->email;
         $user->fullname = $req->fullname;
-        $user->password = $req->password;
+        $user->password = bcrypt($req->password);
         $user->address = $req->address;
         $user->phone = $req->phone;
         $user->imageName = $this->uploadImage();
