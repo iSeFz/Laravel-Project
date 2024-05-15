@@ -31,14 +31,23 @@ class UserController extends Controller
     {
         $username = $request->get('name');
         Log::info('Request object: ', ['request' => $request->all()]); // Log the $request object        
-        $user = Users::where('username', $username)->first();
-        Log::info('User object: ', ['user' => $user]); // Log the $user object
+        // $user = Users::where('username', $username)->first();
+        // Log::info('User object: ', ['user' => $user]); // Log the $user object
         
-        if ($user) {
+        if ($this->checkUserExists($username)) {
             return response()->json(['valid' => false]);
         }
         
         return response()->json(['valid' => true]);
+    }
+
+    public function checkUserExists($username) {
+        $user = Users::where('username', $username)->first();
+        Log::info('User object: ', ['user' => $user]);
+        if ($user) {
+            return true;
+        }
+        return false;
     }
 
     public function uploadImage()
