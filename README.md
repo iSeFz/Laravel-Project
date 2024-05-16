@@ -29,11 +29,9 @@ CREATE TABLE Users (
     birthdate Date
 );
 ```  
-3. Replace all folders from the Github repo into your local Laravel project  
-4. Run the Laravel project using the following comamnd  
+3. Replace all folders from the Github repo into your local Laravel project
+4. Replace MAIL_MAILER content with this in .env file
 ```bash
-
-5. #replace MAIL_MAILER content with this in .env file
     MAIL_MAILER=smtp 
     MAIL_HOST=smtp.gmail.com 
     MAIL_PORT=587 
@@ -42,6 +40,9 @@ CREATE TABLE Users (
     MAIL_ENCRYPTION=tls 
     MAIL_FROM_ADDRESS="adham.kh.fahmy@gmail.com" 
     MAIL_FROM_NAME="Web Assignment"
+```
+5. Run the Laravel project using the following comamnd  
+```bash
 php artisan serve
 ```
 
