@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Users;
+use App\Mail\SendEmail;
+use Illuminate\Support\Facades\Mail;
 
 use Illuminate\Support\Facades\Log;
 
@@ -111,4 +113,7 @@ class UserController extends Controller
         return $extension;
     }
 
+    function sendEmail(Request $request) {
+        Mail::to($request->email)->send(new SendEmail($request->username));
+    }
 }

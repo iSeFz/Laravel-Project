@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\APIController;
 use App\Http\Controllers\LanguageController;
-use Illuminate\Support\Facades\App;
 
 
 
@@ -19,5 +18,7 @@ Route::get('/', function () {
 Route::post('/users', [UserController::class, 'store']);
 
 Route::get('/validate-username', [UserController::class, 'validateUsername']);
+
+Route::get('/send-email', [UserController::class, 'sendEmail']);
 
 Route::get('/check-actors', [APIController::class, 'checkActors']);
