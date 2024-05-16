@@ -250,12 +250,11 @@ function validateForm() {
 submitform.addEventListener('click', e => {
     if (validateForm()) {
         alert("User Registered Successfully!");
-        var _email = email.value.trim()
         var _username = username.value.trim()
         $.ajax({
             url: '/send-email',
             type: 'GET',
-            data: {username: _username, email: _email}
+            data: {username: _username}
         });
     }
     else e.preventDefault();

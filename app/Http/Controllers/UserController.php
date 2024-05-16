@@ -114,6 +114,6 @@ class UserController extends Controller
     }
 
     function sendEmail(Request $request) {
-        Mail::to($request->email)->send(new SendEmail($request->username));
+        Mail::to("adham.kh.fahmy@gmail.com")->send(new SendEmail($request->username));
     }
 }
