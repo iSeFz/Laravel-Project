@@ -33,7 +33,7 @@ CREATE TABLE Users (
 4. Run the Laravel project using the following comamnd  
 ```bash
 
-5. replace MAIL_MAILER content with this in .env file
+5. #replace MAIL_MAILER content with this in .env file
     MAIL_MAILER=smtp 
     MAIL_HOST=smtp.gmail.com 
     MAIL_PORT=587 
