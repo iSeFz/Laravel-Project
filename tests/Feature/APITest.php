@@ -9,8 +9,8 @@ test('API returned correct actors', function () {
         0 => "Jessica Gunning",
         1 => "Angourie Rice",
         2 => "Cameron Cowperthwaite",
-        3 => "Stanley Kamel",
-        4 => "Colin Morgan"
+        3 => "Colin Morgan",
+        4 => "Morris Chestnut"
     );
     
     // Print the response to the console
